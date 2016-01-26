@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-md-6">
           <h2>Add a contact:</h2>
-          <form id="new-contact">
+          <form id="new-contact"> <!--Form start-->
             <div class="form-group">
               <label for="new-first-name">First name</label>
               <input type="text" class="form-control" id="new-first-name">
@@ -24,7 +24,7 @@
               <input type="text" class="form-control" id="new-last-name">
             </div>
 
-            <div id="new-address">
+            <div id="new-address" class="mailing-address"> <!--new-address-->
               <div class="new-address">
                 <div class="form-group">
                   <label for="new-street">Street</label>
@@ -41,10 +41,12 @@
               </div>
             </div>
 
-            <span class="btn btn-primary" id="add-address">Another address</span>
+            <span class="btn btn-primary" id="add-address">Add Billing Address</span> <!--end new-address-->
 
-            <button type="submit" class="btn">Add</button>
-          </form>
+            <div id="submit">
+              <button type="submit" class="btn">Submit Form</button>
+            </div>
+          </form> <!--Form end-->
 
           <h2>Contacts:</h2>
           <ul id="contacts">

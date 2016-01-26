@@ -24,11 +24,12 @@ function resetFields() {
   $("input.new-street").val("GOBLINS");
   $("input.new-city").val("GOPHERS");
   $("input.new-state").val("GORILLAZ");
+  $("#billing-address").remove();
 };
 
 $(document).ready(function() {
   $("#add-address").click(function() {
-    $("#new-address").append('<div class="new-address">' +
+    $("#new-address").append('<div class="new-address" id="billing-address">' +
                                  '<div class="form-group">' +
                                    '<label for="new-street">Street</label>' +
                                    '<input type="text" class="form-control new-street">' +
@@ -52,7 +53,7 @@ $(document).ready(function() {
     var inputtedLastName = $("input#new-last-name").val();
     var newContact = new Contact(inputtedFirstName, inputtedLastName);
 
-    $(".new-address").each(function() {
+    $(".new-address").each(function() { //new address function
       var inputtedStreet = $(this).find("input.new-street").val();
       var inputtedCity = $(this).find("input.new-city").val();
       var inputtedState = $(this).find("input.new-state").val();
@@ -71,8 +72,10 @@ $(document).ready(function() {
       $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
       });
     });
+
     resetFields();
 
   });
+
 
 });
